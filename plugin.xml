@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-loqrplugin" version="0.0.1">
+    <name>LoqrPlugin</name>
+    <description>Cordova Plugin to start the Loqr Standard Journey SDK</description>
+    <license>MIT</license>
+    <keywords>cordova,android,Loqr</keywords>
+    <repo>https://github.com/sb-loqr/Loqr-cordova-plugin.git</repo>
+    <issue>https://github.com/sb-loqr/Loqr-cordova-plugin/issues</issue>
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+    <js-module src="www/loqrplugin.js" name="loqrPlugin">
+        <clobbers target="window.plugins.loqrPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LoqrPlugin">
+                <param name="android-package" value="com.loqr.cordova.plugin.LoqrPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/LoqrPlugin.java" target-dir="src/com/loqr/cordova/plugin" />
+    </platform>
+</plugin>
